@@ -17,3 +17,22 @@ services:
       - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka:8761/eureka/
     image: nodeapp
     command: npm start
+
+  gateway:
+    container_name: GateWay
+    build: ./MonoRepoWithSpring/GateWay
+    ports:
+      - "8054:8054"
+    hostname: GateWay
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka:8761/eureka/
+    depends_on:
+      - eureka
+
+  eureka:
+    container_name: eurekaserver
+    build: ./MonoRepoWithSpring/eurekaserver
+    ports:
+      - "8761:8761"
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka:8761/eureka/
