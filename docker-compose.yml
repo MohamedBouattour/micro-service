@@ -19,11 +19,11 @@ services:
     command: npm start
 
   gateway:
-    container_name: GateWay
-    build: ./GateWay
+    container_name: apigateway
+    build: ./apigateway
     ports:
       - "8054:8054"
-    hostname: GateWay
+    hostname: apigateway
     environment:
       - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka:8761/eureka/
     depends_on:
