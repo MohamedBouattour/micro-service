@@ -1,7 +1,7 @@
 version: "3.0"
 services:
   ui:
-    build: ./js/ui
+    build: ./uml_designer/ui
     image: ui
     container_name: ui
     ports:
@@ -9,7 +9,7 @@ services:
 
   node:
     container_name: nodeserver
-    build: ./js/server
+    build: ./uml_designer/server
     ports:
       - "3000:3000"
     hostname: nodeapp
