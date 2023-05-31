@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<od:definitions xmlns:od="http://tk/schema/od" xmlns:odDi="http://tk/schema/odDi" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC">
+  <od:odBoard id="Board_debug">
+    <od:object name="User" id="Object_06hjvle" attributeValues="fullName:string&#10;mail:string&#10;password:string&#10;address:string&#10;phoneNumber:number&#10;birthdate:Date">
+      <od:links>Link_0efiqyx</od:links>
+    </od:object>
+    <od:object name="CreditCard" id="Object_1nqygo1" attributeValues="cardNumber:string&#10;expirationDate:Date&#10;cvv:number&#10;status:boolean&#10;limit:number">
+      <od:links>Link_03pavs0</od:links>
+    </od:object>
+    <od:object name="Transaction" id="Object_1x4d84e" attributeValues="date:Date&#10;amount:number&#10;type:string&#10;message:string" />
+    <od:link id="Link_0efiqyx" sourceRef="Object_06hjvle" targetRef="Object_1nqygo1" />
+    <od:link id="Link_03pavs0" sourceRef="Object_1nqygo1" targetRef="Object_1x4d84e" />
+  </od:odBoard>
+  <odDi:odRootBoard id="RootBoard_debug">
+    <odDi:odPlane id="Plane_debug" boardElement="Board_debug">
+      <odDi:link id="Link_0efiqyx_di" boardElement="Link_0efiqyx">
+        <odDi:waypoint x="420" y="330" />
+        <odDi:waypoint x="510" y="330" />
+        <odDi:waypoint x="510" y="310" />
+        <odDi:waypoint x="590" y="310" />
+      </odDi:link>
+      <odDi:link id="Link_03pavs0_di" boardElement="Link_03pavs0">
+        <odDi:waypoint x="820" y="310" />
+        <odDi:waypoint x="900" y="310" />
+        <odDi:waypoint x="900" y="370" />
+        <odDi:waypoint x="1000" y="370" />
+      </odDi:link>
+      <odDi:odShape id="Object_1x4d84e_di" boardElement="Object_1x4d84e">
+        <dc:Bounds x="1000" y="280" width="230" height="180" />
+      </odDi:odShape>
+      <odDi:odShape id="Object_06hjvle_di" boardElement="Object_06hjvle">
+        <dc:Bounds x="220" y="220" width="200" height="220" />
+      </odDi:odShape>
+      <odDi:odShape id="Object_1nqygo1_di" boardElement="Object_1nqygo1">
+        <dc:Bounds x="590" y="220" width="230" height="180" />
+      </odDi:odShape>
+    </odDi:odPlane>
+  </odDi:odRootBoard>
+</od:definitions>

@@ -1,0 +1,22 @@
+version: "3.8"
+services:
+  ui:
+    build: ./js/ui
+    image: ui
+    container_name: ui
+    ports:
+      - "8080:80"
+
+  node:
+    container_name: nodeserver
+    build: ./js/server
+    ports:
+      - "3000:3000"
+    hostname: nodeapp
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka:8761/eureka/
+    image: nodeapp
+    depends_on:
+      - eureka
+      - mongo
+    command: npm start
