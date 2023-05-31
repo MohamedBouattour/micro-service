@@ -1,22 +1,22 @@
 version: "3.0"
 services:
-#  ui:
-#    build: ./js/ui
-#    image: ui
-#    container_name: ui
-#    ports:
-#      - "8080:80"
+  ui:
+    build: ./js/ui
+    image: ui
+    container_name: ui
+    ports:
+      - "8080:80"
 
-#  node:
-#    container_name: nodeserver
-#    build: ./js/server
-#    ports:
-#      - "3000:3000"
-#    hostname: nodeapp
-#    environment:
-#      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka:8761/eureka/
-#    image: nodeapp
-#    command: npm start
+  node:
+    container_name: nodeserver
+    build: ./js/server
+    ports:
+      - "3000:3000"
+    hostname: nodeapp
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka:8761/eureka/
+    image: nodeapp
+    command: npm start
 
   gateway:
     container_name: apigateway
