@@ -20,7 +20,7 @@ services:
 
   gateway:
     container_name: GateWay
-    build: ./MonoRepoWithSpring/GateWay
+    build: ./GateWay
     ports:
       - "8054:8054"
     hostname: GateWay
@@ -31,7 +31,7 @@ services:
 
   eureka:
     container_name: eurekaserver
-    build: ./MonoRepoWithSpring/eurekaserver
+    build: ./eurekaserver
     ports:
       - "8761:8761"
     environment:
