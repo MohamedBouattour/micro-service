@@ -1,0 +1,23 @@
+server:
+  port: 8054
+
+spring:
+  application:
+    name: apigateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: authenticationmicroservice
+          uri: http://localhost:8081
+          predicates:
+            - Path=/v1/api/user/**
+
+eureka:
+  instance:
+    appname: ${spring.application.name}
+  client:
+    service-url:
+      defaultZone: http://eureka:8761/eureka
