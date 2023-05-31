@@ -16,7 +16,4 @@ services:
     environment:
       - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka:8761/eureka/
     image: nodeapp
-    depends_on:
-      - eureka
-      - mongo
     command: npm start
