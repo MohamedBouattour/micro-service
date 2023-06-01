@@ -22,7 +22,7 @@ const eurekaConfig = {
     servicePath: '/eureka/apps/',
   },
   instance: {
-    app: 'NodeApp',
+    app: 'Designer_Server',
     instanceId: 'NodeApp',
     hostName: 'localhost',
     ipAddr: '127.0.0.1',
