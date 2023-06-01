@@ -1,24 +1,24 @@
 version: "3.0"
 services:
-  # ui:
-  #   build: ./uml_designer/ui
-  #   image: ui
-  #   container_name: ui
-  #   ports:
-  #     - "8080:80"
+  ui:
+    build: ./uml_designer/ui
+    image: ui
+    container_name: ui
+    ports:
+      - "8080:80"
 
-  # node:
-  #   container_name: nodeserver
-  #   build: ./uml_designer/server
-  #   ports:
-  #     - "3000:3000"
-  #   hostname: nodeapp
-  #   environment:
-  #     - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka:8761/eureka/
-  #   image: nodeapp
-  #   command: npm start
-  #   depends_on:
-  #     - eureka
+  node:
+    container_name: nodeserver
+    build: ./uml_designer/server
+    ports:
+      - "3000:3000"
+    hostname: nodeapp
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka:8761/eureka/
+    image: nodeapp
+    command: npm start
+    depends_on:
+      - eureka
 
   gateway:
     container_name: apigateway
@@ -52,11 +52,18 @@ services:
     image: authenticationapp
     depends_on:
       - eureka
+      - mysql
 
   mysql:
     image: mysql
+    container_name: mysql
     environment:
-      - MYSQL_ROOT_PASSWORD=0000
-      - MYSQL_DATABASE=userdb
+      - MYSQL_ROOT_PASSWORD=groupxyz
+      - MYSQL_DATABASE=groupxyzdb
+      - MYSQL_USER=groupxyz
+      - MYSQL_PASSWORD=groupxyz
     ports:
       - "3306:3306"
+    command: --init-file /data/application/init.sql
+    volumes:
+      - ./init.sql:/data/application/init.sql
