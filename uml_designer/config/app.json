@@ -1,0 +1,44 @@
+{
+  "name": "poc-app",
+  "theme": "default",
+  "structure": "tabs",
+  "screens": [
+    {
+      "name": "Card",
+      "model": "CreditCard",
+      "items": [
+        {
+          "name": "cardNumber",
+          "label": "Card number",
+          "type": "label"
+        },
+        {
+          "name": "image",
+          "label": "",
+          "type": "image"
+        },
+        {
+          "name": "status",
+          "label": "Active",
+          "type": "toggle"
+        },
+        {
+          "name": "save",
+          "label": "Save",
+          "type": "button",
+          "template": "save"
+        }
+      ]
+    },
+    {
+      "name": "Profile",
+      "model": "User",
+      "items": []
+    },
+    {
+      "name": "Transactions",
+      "model": "Transaction",
+      "items": []
+    }
+  ]
+}

@@ -1,3 +1,5 @@
-/MonoRepoWithJS/api/node_modules
-/MonoRepoWithJS/ui/.angular
-/MonoRepoWithJS/ui/node_modules
+**/uml_designer/server/node_modules
+**/uml_designer/ui/.angular
+**/uml_designer/ui/node_modules
+
+**/devenv/node_modules

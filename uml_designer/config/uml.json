@@ -1,0 +1,37 @@
+{
+  "Object_06hjvle": {
+    "id": "Object_06hjvle",
+    "name": "User",
+    "attributeValues": [
+      { "value": "fullName:string" },
+      { "value": "mail:string" },
+      { "value": "password:string" },
+      { "value": "address:string" },
+      { "value": "phoneNumber:number" },
+      { "value": "birthdate:Date" }
+    ]
+  },
+  "Object_1nqygo1": {
+    "id": "Object_1nqygo1",
+    "name": "CreditCard",
+    "attributeValues": [
+      { "value": "cardNumber:string" },
+      { "value": "expirationDate:Date" },
+      { "value": "cvv:number" },
+      { "value": "status:boolean" },
+      { "value": "limit:number" },
+      { "value": "user:User", "import": "User" }
+    ]
+  },
+  "Object_1x4d84e": {
+    "id": "Object_1x4d84e",
+    "name": "Transaction",
+    "attributeValues": [
+      { "value": "date:Date" },
+      { "value": "amount:number" },
+      { "value": "type:string" },
+      { "value": "message:string" },
+      { "value": "creditCard:CreditCard", "import": "CreditCard" }
+    ]
+  }
+}

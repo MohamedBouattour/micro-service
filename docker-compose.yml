@@ -8,7 +8,7 @@ services:
       - "8080:80"
 
   node:
-    container_name: nodeserver
+    container_name: designer_server
     build: ./uml_designer/server
     ports:
       - "3000:3000"
@@ -38,3 +38,18 @@ services:
       - "8761:8761"
     environment:
       - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka:8761/eureka/
+
+  code-server:
+    image: lscr.io/linuxserver/code-server:latest
+    container_name: code-server
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - PROXY_DOMAIN=code-server.my.domain #optional
+      - DEFAULT_WORKSPACE=.:/uml_designer #optional
+    volumes:
+      - .:/uml_designer
+    ports:
+      - 8443:8443
+    restart: unless-stopped

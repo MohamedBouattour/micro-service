@@ -1,28 +1,10 @@
-<div *ngIf="todos">
-  <h1>Todos</h1>
-  <ul>
-    <li *ngFor="let todo of todos">
-      <h3>{{ todo.title }}</h3>
-      <p>{{ todo.description }}</p>
-      <p>Completed: {{ todo.completed }}</p>
-    </li>
-  </ul>
-</div>
-
-
-<h2>Add Todo</h2>
-<form>
-  <div>
-    <label for="title">Title:</label>
-    <input type="text" id="title" name="title" [(ngModel)]="title">
-  </div>
-  <div>
-    <label for="description">Description:</label>
-    <input type="text" id="description" name="description" [(ngModel)]="description">
-  </div>
-  <div>
-    <label for="completed">Completed:</label>
-    <input type="checkbox" id="completed" name="completed" [(ngModel)]="completed">
-  </div>
-  <button type="button" (click)="addTodo()">Add Todo</button>
-</form>
+<mat-tab-group>
+  <mat-tab label="Design">
+    <iframe style="height: 100%; width: 100%" src="http://127.0.0.1:3000">
+    </iframe>
+  </mat-tab>
+  <mat-tab label="Code">
+    <iframe style="height: 100%; width: 100%" src="http://127.0.0.1:8443">
+    </iframe>
+  </mat-tab>
+</mat-tab-group>
