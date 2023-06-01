@@ -23,14 +23,14 @@ const eurekaConfig = {
   },
   instance: {
     app: 'Designer_Server',
-    instanceId: 'NodeApp',
+    instanceId: 'Designer_Server',
     hostName: 'localhost',
     ipAddr: '127.0.0.1',
     port: {
       '$': 3000,
       '@enabled': 'true',
     },
-    vipAddress: 'NodeApp',
+    vipAddress: 'Designer_Server',
     dataCenterInfo: {
       '@class': 'com.netflix.appinfo.InstanceInfo$DefaultDataCenterInfo',
       name: 'MyOwn',
