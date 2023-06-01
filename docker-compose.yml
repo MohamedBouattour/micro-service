@@ -17,6 +17,8 @@ services:
       - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka:8761/eureka/
     image: nodeapp
     command: npm start
+    depends_on:
+      - eureka
 
   gateway:
     container_name: apigateway
