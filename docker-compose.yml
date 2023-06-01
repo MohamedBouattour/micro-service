@@ -41,7 +41,7 @@ services:
 
   crud:
     container_name: Spring-Boot-CRUD
-    build: ./springBootCRUD
+    build: ./springBootCrud
     ports:
       - "8080:8080"
     hostname: Spring-Boot-CRUD
@@ -49,7 +49,7 @@ services:
       - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka:8761/eureka/
       - EUREKA_HOST=eureka
       - MYSQL_HOST=mysql
-    image: authenticationapp
+    image: springbootcrud
     depends_on:
       - eureka
       - mysql
