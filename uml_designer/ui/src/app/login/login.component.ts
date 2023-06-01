@@ -21,10 +21,8 @@ export class LoginComponent {
     this.service.login(credentials).subscribe((response: any) => {
       if (response?.access_token) {
         console.log(response);
-
-        // User is authenticated, redirect to home page
-        this.router.navigate(['/home']);
       }
     });
+    this.router.navigate(['/']);
   }
 }

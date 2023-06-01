@@ -1,4 +1,4 @@
-const basePath = "http://localhost:3000";
+const basePath = "http://127.0.0.1:3000";
 
 /* button.click(function() {
   if (!button.hasClass("loading")) {
@@ -59,7 +59,7 @@ function saveUpdates(result) {
       return response.json();
     })
     .catch(error => {
-      openSnackBar("Generation fail");
+      openSnackBar("Save fail");
     });
 }
 
